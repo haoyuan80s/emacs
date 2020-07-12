@@ -1,0 +1,4 @@
+alias e find-file $1
+alias clear clear 0
+alias ll ls -l $*
+alias emacs find-file $1

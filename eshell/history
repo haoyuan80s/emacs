@@ -1,0 +1,128 @@
+cd ~/projects/
+lein new quil-cljs my-sketch
+cd my-sketch/
+e src/
+lein cljsbuild once
+cd target/
+cd ..
+brew install candid82/brew/joker
+cd ..
+mv reddit-viewer ..
+cd ~/projects/
+cd gm-example/
+rm -rf fig-example/
+cd src/gm_example/
+cd ..
+cd ..
+cd learn-cljs/
+rm -rf code
+rm -rf scripts/
+cd ..
+rm -rf learn-cljs/config/
+rm -rf learn-cljs/README.md
+rm -rf learn-cljs/.gitignore
+rm -rf learn-cljs/.git
+mkdir clj-example
+cd clj-example/
+mkdir deps.edn
+rmdir deps.edn
+touch deps.edn
+e deps.edn
+clojure -m figwheel.main -b dev -r
+clj -A:suitable
+clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version "0.22.0"} cider/piggieback {:mvn/version"0.4.1"}}}' -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware,cider.piggieback/wrap-cljs-repl]"
+mv ../sample_efficiency/note.org .
+e train_base.sh
+cd ~/projects/
+lein new fig-wheel-main heroes.main -- --rum
+lein new figwheel-main heroes.main -- --rum
+rm -rf heroes.main/
+lein new figwheel-main heroes -- --rum
+e heroes/project.clj
+mv ../../.joker .
+rm .joker
+mkdir .lsp
+e .lsp/config.edn
+ll -a
+cd ../..
+cd ..
+lein new figwheel-main tmp-example -- --reagent
+cd tmp-example/src/tmp_example/
+ll -a
+cd ..
+r .lsp/
+rm -r .lsp/
+cd ../
+cd ..
+cd ..
+lein new figwheel-main heroes.main -- --rum
+mv heroes.main Heros
+cd Heros/src/heroes/
+cd ~/projects/
+lein new app app-example
+cd Heros/src/heroes/
+cd Heros/src/heroes/
+e main.cljs
+cd ~/projects/
+lein new figwheel-main tmpp
+cd tmpp/
+cd src/tmpp/
+e core.cljs
+cd_hover
+cd ..
+touch .projectile
+cd ~/projects/
+clj -A:new figwheel-main asdf.main -- --rum
+sl
+cd ..
+cd ..
+cd ..
+mv resources/public/css docs/
+mv resources/public/index.html docs/
+cd docs/
+mv css static
+cd static/
+e style.css
+cd ..
+cp index.html ../resources/
+which bash
+chmod a+x min.sh
+ll min.sh
+cat min.sh
+mv min.sh ../../
+cd ..
+./min.sh
+clj -Sdescribe
+cp min.sh repl.sh
+e repl.sh
+mkdir docs
+mv resources/public/css/ docs/
+mv docs/css/ docs/static
+cp resources/public/index.html docs/
+ll docs/
+e docs/index.html
+mv dev.cljs.edn repl.cljs.edn
+e repl.cljs.edn
+./min.sh
+ls
+ln
+ls
+mv resources/public/static/ resources/public/static_old
+pwd
+ln ~/projects/Heroes/docs/static/  ~/projects/Heroes/resources/public/static
+ln -s ~/projects/Heroes/docs/static/  ~/projects/Heroes/resources/public/static
+ls
+ll resources/
+ll resources/public/static/
+ll resources/public/
+ls
+cd ~/Dropbox/
+ls
+cd note.org/
+ls
+cd ..
+ls
+mkdir orgzly
+cd orgzly/
+ls
+e note.org

@@ -1,0 +1,40 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-capture-last-stored-marker"
+ (filename . "~/Dropbox/org/note.org")
+ (front-context-string . "** TODO \n   \" \"T")
+ (rear-context-string . "[basic config]]\n")
+ (position . 459))
+("org-refile-last-stored"
+ (filename . "~/Dropbox/org/note.org")
+ (front-context-string . "** DONE replay A")
+ (rear-context-string . "ferent domains.\n")
+ (position . 929))
+("org-capture-last-stored"
+ (filename . "~/Dropbox/org/note.org")
+ (front-context-string . "** TODO Emacs Li")
+ (rear-context-string . "eference manual\n")
+ (position . 992))
+("tmp"
+ (filename . "/tmp/")
+ (front-context-string . ".ccls-cache\n  sr")
+ (rear-context-string . "28 May 30 01:49 ")
+ (position . 209))
+("Yuanha"
+ (filename . "~/Happy/workspaces/ws1/src/Yuanha/")
+ (front-context-string . "..\n  -rw-r--r--@")
+ (rear-context-string . "20 May 31 15:18 ")
+ (position . 227))
+("note.org"
+ (filename . "~/Happy/workspaces/ws1/src/Yuanha/note.org")
+ (front-context-string . "#+OPTIONS: ^:nil")
+ (rear-context-string)
+ (position . 1))
+("metric_models_v2.1"
+ (filename . "~/Happy/workspaces/ws1/src/Yuanha/metric_models_v2.1/")
+ (front-context-string . ".gitignore\n  drw")
+ (rear-context-string . "61 May 27 10:04 ")
+ (position . 324))
+)
