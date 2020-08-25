@@ -3,21 +3,17 @@
 (setq gc-cons-threshold 100000000)
 
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+;; (add-to-list 'package-archives
+;;              '("melpa" . "https://melpa.org/packages/"))
 
-;; (setq package-archives
-;;       '(("melpa-stable" . "https://stable.melpa.org/packages/")
-;; 	("melpa"        . "https://melpa.org/packages/")
-;; 	;; ("GNU ELPA"     . "https://elpa.gnu.org/packages/")
-;; 	)
-;;       package-archive-priorities
-;;       '(("melpa"        . 10)
-;; 	("melpa-stable" . 5)
-;; 	;; ("GNU ELPA"     . 0)
-;; 	))
+(setq package-archives
+      '(("melpa"        . "https://melpa.org/packages/")
+	("melpa-stable" . "https://stable.melpa.org/packages/"))
+      package-archive-priorities
+      '(("melpa"        . 10)
+	("melpa-stable" . 5)))
 
-;; (add-to-list 'package-pinned-packages '(cider . "MELPA Stable") t)
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 ;; Initialise the packages, avoiding a re-initialisation.
 (unless (bound-and-true-p package--initialized)
@@ -45,5 +41,5 @@
 
 (require 'org)
 ;; (setq vc-follow-symlinks t)
-(org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))

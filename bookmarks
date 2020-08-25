@@ -3,20 +3,20 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored-marker"
- (filename . "~/Dropbox/org/note.org")
- (front-context-string . "** TODO \n   \" \"T")
- (rear-context-string . "[basic config]]\n")
- (position . 459))
+ (filename . "~/Dropbox/org/paper.org")
+ (front-context-string . "* [[https://arxi")
+ (rear-context-string . " distillation]]\n")
+ (position . 2522))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/org/note.org")
- (front-context-string . "** DONE replay A")
- (rear-context-string . "ferent domains.\n")
- (position . 929))
+ (front-context-string . "** (doamin, slot")
+ (rear-context-string . "ict \"response\"?\n")
+ (position . 4245))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/org/note.org")
- (front-context-string . "** TODO Emacs Li")
- (rear-context-string . "eference manual\n")
- (position . 992))
+ (filename . "~/Dropbox/org/paper.org")
+ (front-context-string . "** [[https://arx")
+ (rear-context-string . "eep-ensembles]]\n")
+ (position . 2450))
 ("tmp"
  (filename . "/tmp/")
  (front-context-string . ".ccls-cache\n  sr")
