@@ -1,128 +1,123 @@
-./min.sh
-ln
-mv resources/public/static/ resources/public/static_old
-pwd
-ln ~/projects/Heroes/docs/static/  ~/projects/Heroes/resources/public/static
-ln -s ~/projects/Heroes/docs/static/  ~/projects/Heroes/resources/public/static
-ll resources/
-ll resources/public/static/
-ll resources/public/
-cd ~/Dropbox/
-cd note.org/
-cd ..
-mkdir orgzly
-cd orgzly/
-e note.org
-cd ~/.emacs.d/
-cd ..
-cd .
-cd -
-cd sni
-cd .emacs.d/snippets/
-cd ..
-cd ..
-cd snippets/
-cd ..
-cp -r snippets/ ~/.emacs.d/snippets
-cd ~/.emacs.d/
-mv snippets tmp
-mv tmp/snippets/ .
-cd ~/Happy/
-cd workspaces/
-cd 1p3p/
-brazil ws use -p AlexaDRScienceShortlister
-brazil ws use -p AlexaDRScienceShortlister
+cd ssh:hao@47.115.27.92:/home/hao/project/
+cd /ssh:hao@47.115.27.92:/home/hao/project/
+cd capchas/
 clear
-asdf
-cd src/
-cd AlexaDRScienceShortlister/
-git checkout pytorch-1.0
-pip install -U transformers
-cd /Users/yuanha/Happy/workspaces
-rm -rf 1p3p/
-cd ws1/src/AlexaDRScienceShortlister/src/alexa_dr_science_shortlister/trainer/
-cd ..
-sl
-mv -r captcha-classification/ ~/Happy/workspaces/ws1/src/Yuanha/
-mv captcha-classification/ ~/Happy/workspaces/ws1/src/Yuanha/
-tldr
-tldr ln
-ll ~/Happy/workspaces/ws1/src/Yuanha/
-ln -s ~/Happy/workspaces/ws1/src/Yuanha/captcha-classification ./captcha-classification
-cd captcha-classification/
-cd training/
-cd ..
-rm *.png
-e data.py
-mkdir tiny
-cd validation/
-ls | head -10
-pwd
-ls | head -10 | xargs cp ../tiny/
-cd ..
-mv ~/Desktop/true-test .
+cd project/
+mv capchas capcha
+cd capcha/
+rm -r capcha
+mkdir capcha
+mv main.py capcha/
+mv ../capchas capcha/
+cd capcha/
 ll
+cd capcha/
+cd capchas/
+ll v2 | head 10
+e main.py
+ll v2 | head -n10
+curl -v localhost:9090
+curl -v localhost:9090/goodbye
+curl -v localhost:9090/goodb
+curl -v -d "nic" localhost:9090
+clear
+curl -v -d "nic" localhost:9090
+curl -d "nic" localhost:9090
+curl localhost:9090 -d "nic"
+cd /Users/yuanha/projects/golang/learn_micro_service/
+tldr
+tldr --update
+tldr
+tldr jq
 cd ..
-mv calib_cv calibration
+up
 cd ..
-mkdir efficient_calibration
-mv calibration/play.py efficient_calibration/
-cd efficient_calibration/
-e play.py
-rm Captchas.tar
-rm -rf Captchas/
-cd ~
-cd projects/
-rm -r clj-example
-rm -r foo
-rm -r tmpp/
-rm -r tmp-example/
-rm -r reddit-viewer/
-rm -r hello-world/
-cd clojure-noob/src/clojure_noob/
-e core.clj
 cd ..
-cp resnet.pt wangjia
 cd ..
-cp -r wangjia ~/projects/wangjia
-cd ~/projects/wangjia/
-e learn.py
-ll ~/Desktop/
-ll /tmp/captha_net.pt
-ll  -h /tmp/captha_net.pt
-ll /Users/yuanha/data/capcha_tiny
-cp resnet.pt ~/Desktop/
-cp learn.py ~/Desktop/
-cd /Users/yuanha/data/capcha_tiny
-open 0_mOtU
-echo "unbind C-bset-option -g prefix C-^bind-key C-^ send-prefixset -g default-terminal screen-256color"
-mv resnet18.pt ~/Desktop/
-python
-ll -a
-mv .editorconfig ~
+cd learn_micro_service/
+go run main.og
+echo $Yuanah
+echo $Yuanha
+go test -run
+go test -run ''
+cd /Users/yuanha/projects/golang/learn_micro_service/data/
+go test -run ''
+cd ..
+go run main.go
+make
+go get github.com/go-openapi/runtime/middleware
+e go.mod
+go run main.go
+e go.mod
+go run main.go
+e go.mod
+go run main.go
+make
+go list -m all
+go get github.com/go-openapi/runtime/middleware
+cat go.mod
+go install github.com/haoyuan80s/microservice
+cat go.mod
+echo $GO111MODULE
+ll microservice
+find vendor/
+ll vendor//
+ll vendor/
+find vendor/
+clear
+go mode why
+go mode why -h
+go mode why -help
+go mode why --help
+go help mode why
+go help  why
+go help why
+rm -r vendor/
+find .
+clear
+tldr find
+go run main.go
+make
+go run main.go
+e .
+git clone -b episode_7 https://github.com/nicholasjackson/building-microservices-youtube.git
+cd building-microservices-youtube/
+cd ..
+cd ..
+rm -r learn_microservices_v2/
+l
+asdf
+pwd
+go run main.go
+cd ..
+cd client/
+swagger generate client -f ../product-api/swagger.yaml -A product-api
+cd ..
+cd product-api/
+make swagger
+e swagger.yaml
+cd ../client/
+swagger generate client -f ../product-api/swagger.yaml -A product-api
+cd ..
+mv client product-api/
+cd product-api/
+cd client/
+swagger generate client -f ../product-api/swagger.yaml -A product-api
+pwd
+cd ..
+cd client/
+swagger generate client -f ../swagger.yaml -A product-api
+cd client/
 ls
-man shfmt
-shfmt -h
-go get golang.org/x/tools/gopls@latest
-brew install go
-go get golang.org/x/tools/gopls@latest
-go
-go get golang.org/x/tools/gopls@latest
-GO111MODULE=on go get golang.org/x/tools/gopls@latest
-go get golang.org/x/tools/gopls@latest
-gopls
-go get -v github.com/rogpeppe/godef
-go get -v golang.org/x/tools/cmd/guru
-touch all_schema.yaml
-go run hello-world.go
-go get github.com/go-delve/delve/cmd/dlv
-pip install transformers -U
+go test
+npm update
+brew update
+npm update
+node -v
+brew upgrade node
+node -v
+npm -v
 ls
-cd ..
+node
 ls
-cd rebeling/
-ls
-less play.sh
-cd ..
-ls
-rm -r rebeling
+mv config.el _config.el
