@@ -41,7 +41,7 @@
     "comment or uncomment current line"
     (interactive)
     (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-  (global-set-key (kbd "C-;") 'toggle-comment-on-line)
+  ;; (global-set-key (kbd "C-;") 'toggle-comment-on-line)
   (use-package emacs
     :config
     (defun yh/multi-line-next ()
@@ -355,9 +355,9 @@
       ("M-<tab>"   . company-complete)
       :ensure t
       :custom
-      (company-global-modes '(not  eshell-mode )) ;org-mode inferior-python-mode
+      ;; (company-global-modes '(not  eshell-mode )) ;org-mode inferior-python-mode
       (company-show-numbers 'left)
-      (company-idle-delay 0.1)
+      (company-idle-delay 0.5)
       (company-minimum-prefix-length 1)
       (company-tooltip-align-annotations t)
       ;; (company-require-match 'never)
@@ -382,6 +382,7 @@
       (define-key company-active-map (kbd "RET") nil)
       (define-key company-active-map (kbd "<tab>") #'company-complete-selection)
       (define-key company-active-map (kbd "M-<tab>") #'company-complete-selection))
+    (add-to-list 'completion-styles 'flex)
   #+END_SRC
 
 * config edit/reload
@@ -667,18 +668,28 @@
     ;; (eglot--highlights nil)
     (eglot-ignored-server-capabilites '(:documentHighlightProvider))
 
-    :hook ((rust-mode . eglot-ensure)
+    :hook ((Shell-script . eglot-ensure)
            (go-mode . eglot-ensure)
-           (python-mode . eglot-ensure))
+           (python-mode . eglot-ensure)
+           (web-mode . eglot-ensure)
+           (js2-mode . eglot-ensure)
+           (html-mode . eglot-ensure)
+           (css-mode . eglot-ensure)
+           (rustic-mode . eglot-ensure)
+
+
+           )
+  
     :bind (:map eglot-mode-map
                 ("C-c e r" . eglot-rename)
                 ("C-c e h" . eglot-help-at-point)
                 ("C-c e a" . eglot-code-actions)
-                ;; ("M-n"     . flymake-goto-next-error)
-                ;; ("M-p"     . flymake-goto-prev-error)
                 )
     :init
     (setq eglot-autoshutdown t))
+
+  (setq-default eglot-workspace-configuration
+                '((:pyls :plugins (:jedi_completion (:fuzzy t)))))
 #+end_src
 * esup
   #+begin_src emacs-lisp
@@ -712,7 +723,6 @@
       (:pre (flycheck-list-errors)
             :post (quit-windows-on "*Flycheck errors*")
             :hint nil)
-      "Errors"
       ("n" flycheck-next-error "next")
       ("p" flycheck-previous-error "previous")
       ("f" flycheck-first-error "first")
@@ -725,13 +735,11 @@
       (:pre (flymake-show-diagnostics-buffer)
             :post (quit-windows-on (concat "*Flymake diagnostics for " (buffer-name) "*"))
             :hint nil)
-      "Errors"
       ("n" flymake-goto-next-error "next")
       ("p" flymake-goto-prev-error "previous")
-      ;; ("f" flycheck-first-error "first")
-      ;; ("l" (progn (goto-char (point-max)) (flycheck-previous-error)) "last")
-      ;; ("F" flycheck-error-list-set-filter "Filter")
       ("q" nil))
+
+    (global-key-binding (kbd "C-!") 'hydra-flymake/body)
 
     (use-package flycheck
       ;; :hook (c-mode python-mode)
@@ -742,7 +750,7 @@
       (flycheck-global-modes
        '(not text-mode outline-mode fundamental-mode org-mode emacs-lisp-mode
              diff-mode shell-mode eshell-mode term-mode elisp-mode))
-      (flycheck-idle-change-delay 0.2)
+      ;; (flycheck-idle-change-delay 0.2)
       ;; ;; (flycheck-check-syntax-automatically '(save mode-enabled))
       ;; (flycheck-highlighting-mode 'lines)
       ;; (flycheck-checker-error-threshold 200)
@@ -766,7 +774,6 @@
     ;; (use-package flymake
     ;;   :bind ("C-!" . hydra-flymake/body))
 
-    ;; (global-key-binding (kbd "C-!") 'hydra-flymake/body)
   #+END_SRC
 
 * format-all
@@ -792,7 +799,7 @@
 * go
 #+begin_src emacs-lisp
   (defun lsp-go-install-save-hooks ()
-    ;; (add-hook 'before-save-hook #'lsp-format-buffer t t)
+    (add-hook 'before-save-hook #'lsp-format-buffer t t)
     (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
   (use-package go-mode
@@ -801,10 +808,9 @@
     (:map go-mode-map
           ("C-c C-d" . godoc-at-point)
           ("C-c b" . dlv-current-func)
-          ("C-c B" . dlv)
-          )
-    :config
-    (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+          ("C-c B" . dlv))
+    ;; :config
+    ;; (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
     )
 
   (use-package go-dlv
@@ -1094,16 +1100,16 @@
              (c-mode . lsp-deferred)
              (c++-mode . lsp-deferred)
              (lsp-mode . lsp-enable-which-key-integration))
-      :custom
-      (lsp-auto-configure t)
-      (lsp-signature-auto-activate t)
-      (lsp-enable-on-type-formatting t)
-      (lsp-enable-snippet t)
-      (lsp-enable-links t)
-      (lsp-signature-doc-lines 3)
-      (lsp-idle-delay 0.5)
-      (lsp-enable-symbol-highlighting nil)
-      (lsp-diagnostics-provider :auto)
+      ;; :custom
+      ;; (lsp-auto-configure t)
+      ;; (lsp-signature-auto-activate t)
+      ;; (lsp-enable-on-type-formatting t)
+      ;; (lsp-enable-snippet t)
+      ;; (lsp-enable-links t)
+      ;; (lsp-signature-doc-lines 3)
+      ;; (lsp-idle-delay 0.5)
+      ;; (lsp-enable-symbol-highlighting nil)
+      ;; (lsp-diagnostics-provider :flycheck)
       :config
       (define-key lsp-signature-mode-map (kbd "M-p") nil)
       (define-key lsp-signature-mode-map (kbd "M-n") nil))
@@ -1129,19 +1135,20 @@
       ("C-c l d" . lsp-ui-doc-show)
       ("C-c l f" . lsp-ui-doc-focus-frame)
       ("C-c l u" . 'lsp-ui-doc-unfocus-frame)
-      :custom
-      (lsp-ui-doc-enable nil)
-      (lsp-ui-peek-fontify 'on-demand)
-      (lsp-ui-sideline-delay 0.2)
-      (lsp-ui-sideline-enable nil)
-      (lsp-ui-sideline-show-hover t)
-      (lsp-ui-sideline-show-code-actions t)
+      ;; :custom
+      ;; (lsp-ui-doc-enable nil)
+      ;; (lsp-ui-peek-fontify 'on-demand)
+      ;; (lsp-ui-sideline-delay 0.2)
+      ;; (lsp-ui-sideline-enable nil)
+      ;; (lsp-ui-sideline-show-hover t)
+      ;; (lsp-ui-sideline-show-code-actions t)
       :config
       (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
       (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
 
 
     (use-package ccls
+      ;; :disabled
       :defer t
       :hook ((c-mode c++-mode objc-mode) .
              (lambda () (require 'ccls) (lsp)))
@@ -1159,14 +1166,6 @@
                                 "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include"
                                 "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Framework"]
                                :resourceDir "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0")))
-
-
-    ;; (use-package lsp-python-ms
-    ;;   :ensure t
-    ;;   :init (setq lsp-python-ms-auto-install-server t)
-    ;;   :hook (python-mode . (lambda ()
-    ;;                    (require 'lsp-python-ms)
-    ;;                    (lsp-deferred))))
   #+END_SRC
 
 * lua
@@ -1665,21 +1664,17 @@
 
     (use-package eshell
       :commands eshell
-      :defer t
-      ;; :bind
-      ;; ("<C-M-return>" . eshell)
+      ;; :demand t
       :custom
       (eshell-hist-ignoredups t)
       (eshell-save-history-on-exit t)
       (eshell-input-filter 'eshell-input-filter-initial-space)
       :init
-      ;; (add-hook 'eshell-first-time-mode-hook
-      ;;           (lambda ()
-      ;;             (define-key eshell-hist-mode-map (kbd "M-r") 'counsel-esh-history)))
-      ;; )
       (add-hook 'eshell-first-time-mode-hook
                 (lambda ()
-                  (define-key eshell-hist-mode-map [remap isearch-backward] 'counsel-esh-history)))
+                  (define-key eshell-hist-mode-map [remap isearch-backward] 'counsel-esh-history)
+                  (define-key eshell-mode-map (kbd "<tab>")  'company-complete)
+                  ))
       )
 
     (defun eshell-new()
@@ -1688,7 +1683,7 @@
       (eshell 'N))
 
     (global-set-key (kbd "C-c s") 'eshell)
-    ;; (global-set-key (kbd "C-c s") 'eshell-new)
+    (global-set-key (kbd "C-c S") 'eshell-new)
 
 #+END_SRC
 
