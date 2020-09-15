@@ -1689,52 +1689,50 @@
 
 * single line kill/copy
 #+begin_src emacs-lisp
-    ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;; ;; kill line if no region active                                          ;;
-    ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;; (defadvice kill-region (before slick-cut activate compile)
-    ;;   "When called interactively with no active region, kill a single line instead."
-    ;;   (interactive
-    ;;    (if mark-active
-    ;;        (list (region-beginning) (region-end))
-    ;;      (list (line-beginning-position) (line-beginning-position 2)))))
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; ;; kill line if no region active                                          ;;
+  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; (defadvice kill-region (before slick-cut activate compile)
+  ;;   "When called interactively with no active region, kill a single line instead."
+  ;;   (interactive
+  ;;    (if mark-active
+  ;;        (list (region-beginning) (region-end))
+  ;;      (list (line-beginning-position) (line-beginning-position 2)))))
 
-    ;; ;; (defun yh/Cw (beg end &optional region)
-    ;; ;;   (interactive "p")
-    ;; ;;   (message arg)
-    ;; ;;   (if mark-active (kill-region beg end &optional region)
-    ;; ;;     (crux-kill-whole-line arg)))
+  ;; ;; (defun yh/Cw (beg end &optional region)
+  ;; ;;   (interactive "p")
+  ;; ;;   (message arg)
+  ;; ;;   (if mark-active (kill-region beg end &optional region)
+  ;; ;;     (crux-kill-whole-line arg)))
 
-    ;; ;; (global-key-binding (kbd "C-w") 'yh/Cw)
+  ;; ;; (global-key-binding (kbd "C-w") 'yh/Cw)
 
-    ;; (defadvice kill-ring-save (before slick-cut activate compile)
-    ;;   "When called interactively with no active region, copy a single line instead."
-    ;;   (interactive
-    ;;    (if mark-active
-    ;;        (list (region-beginning) (region-end))
-    ;;      (progn (message "copy current line")
-    ;;	    (list (line-beginning-position) (line-end-position))))))
+  ;; (defadvice kill-ring-save (before slick-cut activate compile)
+  ;;   "When called interactively with no active region, copy a single line instead."
+  ;;   (interactive
+  ;;    (if mark-active
+  ;;        (list (region-beginning) (region-end))
+  ;;      (progn (message "copy current line")
+  ;;	    (list (line-beginning-position) (line-end-position))))))
 
-    ;; (defun yh/whole-line-or-region-kill-ring-save (prefix)
-    ;;   "Copy region or PREFIX whole lines."
-    ;;   (interactive "p")
-    ;;   (if (not mark-active) (message "save current line"))
-    ;;   (whole-line-or-region-call-with-region 'kill-ring-save prefix t))
+  (defun yh/whole-line-or-region-kill-ring-save (prefix)
+    "Copy region or PREFIX whole lines."
+    (interactive "p")
+    (if (not mark-active) (message "save current line"))
+    (whole-line-or-region-call-with-region 'kill-ring-save prefix t))
 
-    ;;  (defun yh/whole-line-or-region-sp-kill-region (prefix)
-    ;;       "Kill region or PREFIX whole lines."
-    ;;       (interactive "*p")
-    ;;       (whole-line-or-region-call-with-region 'sp-kill-region prefix t))
+   (defun yh/whole-line-or-region-sp-kill-region (prefix)
+	"Kill region or PREFIX whole lines."
+	(interactive "*p")
+	(whole-line-or-region-call-with-region 'sp-kill-region prefix t))
 
-    (use-package whole-line-or-region
-      ;; :bind
-      ;; (:map
-      ;;  whole-line-or-region-local-mode-map
-      ;;  ("M-w" . 'yh/whole-line-or-region-kill-ring-save))
+  (use-package whole-line-or-region
+    :bind
+    (:map
+     whole-line-or-region-local-mode-map
+     ("M-w" . 'yh/whole-line-or-region-kill-ring-save)))
 
-  )
-
-    (whole-line-or-region-global-mode)
+  (whole-line-or-region-global-mode)
 
 #+end_src
 
