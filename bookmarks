@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/Dropbox/org/journal.org")
- (front-context-string)
- (rear-context-string . "* lsp-python-ms\n")
- (position . 1262))
+ (front-context-string . "**** pp-macroexp")
+ (rear-context-string . "ched-lines-mode\n")
+ (position . 2925))
 ("org-notes"
  (filename . "~/Dropbox/org/")
  (front-context-string . "learn.org\n  -rw-")

@@ -1,121 +1,128 @@
-ll vendor//
-ll vendor/
-find vendor/
-clear
-go mode why
-go mode why -h
-go mode why -help
-go mode why --help
-go help mode why
-go help  why
-go help why
-rm -r vendor/
-find .
-clear
+find -name vterm-ctrl.c
+find -name "vterm-ctrl.c"
 tldr find
-go run main.go
-make
-go run main.go
-e .
-git clone -b episode_7 https://github.com/nicholasjackson/building-microservices-youtube.git
-cd building-microservices-youtube/
+find . -name "vterm-ctrl.c"
+ghic
+ghc
+ghci
 cd ..
-cd ..
-rm -r learn_microservices_v2/
-l
-asdf
-pwd
-go run main.go
-cd ..
-cd client/
-swagger generate client -f ../product-api/swagger.yaml -A product-api
-cd ..
-cd product-api/
-make swagger
-e swagger.yaml
-cd ../client/
-swagger generate client -f ../product-api/swagger.yaml -A product-api
-cd ..
-mv client product-api/
-cd product-api/
-cd client/
-swagger generate client -f ../product-api/swagger.yaml -A product-api
-pwd
-cd ..
-cd client/
-swagger generate client -f ../swagger.yaml -A product-api
-cd client/
-go test
-npm update
-brew update
-npm update
-node -v
-brew upgrade node
-node -v
-npm -v
-node
-mv config.el _config.el
-touch myapp/src/myapp/core.cljstouch myapp/src/myapp/core.cljs
-tree .
-cd myapp/
-tree .
-tree .
-mv build.clj src/myapp/
-cd src/myapp/
-cd ..
-cd ..
-node --version
-brew upgrade clojure/tools/clojure
-brew install clojure/tools/clojure
-brew upgrade clojure/tools/clojure
-brew install gcc
-xcode-select --install
-brew install gcc
-brew upgrade clojure/tools/clojure
-cd ..
-cd ..
-e /var/folders/vt/lnq6pls93cx008v6vz5t9805g_fpwt/T/clojure-1430602340973169706.edn
-clojure build.clj
-brew intall rlwrap
-brew install rlwrap
-clojure build.clj
-tree .
-cd ..
-tree .
-mv myapp/
+ll
+ll ..
+mv src/* .
 cd src/
-cd myapp/
-pwd
-mv deps.edn ../../
-cd ../..
-pwd
-tree 
-pwd
-clojure build.clj 
-node main.js
-e main.js
-tree
+ll
+cd ..
+clear
+cd ..
+rm -rf ts-groceries/
+mkdir ts-groceries
+cd ts-groceries/
+e package.json
+rm package.json 
+yarn init
+yarn init -y
+e package.json 
+┌─[15:10]──[/Users/yuanha/projects/javascript/ts-groceries]
+clear
+rm -r node_modules/
+rm -r yarn.lock 
+yarn
+rm -r node_modules/
+rm -r yarn.lock 
+rm -r yarn-error.log 
+ll -a
+rm package-lock.json 
+yarn
+e src/index.ts
 cd ..
 cd ..
 cd ..
-cd ../..
+cd 6.824/
+go mode init dist-sys
+go mod init dist-sys
+more go.mod 
+cat go.mod 
 cd ..
-mkdir mywebapp
-mkdir -p mywebapp/src/mywebapp
-touch mywebapp/src/mywebapp/core.cljs
-e mywebapp/src/mywebapp/core.cljs
 cd ..
-cd -
-cd my
-cd mywebapp/
-clojure build.clj 
-cd out/
-cd mywebapp/
-cd ../..
-find index.hl
+mv go.mod src/
+cd src/
+cd ..
+mv go.mod mr
+cd mr
+e master.go 
+cd ..
+cd main/
+ls
+cd /Users/yuanha/projects/golang/gobook/gopl.io/ch8/clock1/
+ls
+cd /Users/yuanha/projects/golang/gobook/gopl.io/
 ls
 cd ..
 ls
+go run gopl.io/ch8/clock1
+go run -a gopl.io/ch8/clock1
+ls
+clear
+golang -h
+go -h
+go run -h
+go help run 
+ls
+go build -a gopl.io/ch8/clock1
+./clock1 
+ls
+go build -a gopl.io/ch8/clock1
+./clock1 
+ll gopl.io/ch8/clock1
+cat gopl.io/ch8/clock1/clock.go 
+go build -a gopl.io/ch8/clock1
+ls
+rm clock1
+go build -a gopl.io/ch8/clock1
+rm clock1
+go build -a gopl.io/ch8/clock1
+./clock1 
+go build -a gopl.io/ch8/clock1
+./clock1 
+ls
 cd ..
 ls
-e index.html
+cd gobook/
+ls
+rm -r gopl.io/
+go run -a gopl.io/ch8/clock1
+go run -a gopl.io/ch8/clock2
+go run -a gopl.io/ch8/reverb1
+ls
+go run -a gopl.io/ch8/crawl1
+go build -a gopl.io/ch8/crawl1
+ls
+./crawl1 http://gopl.io/
+clear
+ls
+go run -a gopl.io/countdown
+go run -a gopl.io/countdown1
+go run -a gopl.io/ch8/ecountdown1
+go run -a gopl.io/ch8/countdown1
+e ~/go/src/gopl.io/ch8/countdown1
+go run -a gopl.io/ch8/countdown1
+go run -a gopl.io/ch8/countdown2
+go run -a gopl.io/ch8/countdown3
+go run -a gopl.io/ch8/countdown3ls
+cd ~/Downloads/
+ls
+ls | grep pay2020
+${ls | grep pay2020 }
+ls
+open .
+cd ../main/
+ls
+make run-worker
+cd ../main/
+ls
+ls
+cd ../main/
+cd ../main/
+make run-master 
+cd ../main
+make run-master 

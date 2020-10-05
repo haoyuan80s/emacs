@@ -20,6 +20,7 @@
         org-kill-line
         org-return
         org-self-insert-command
+        org-yank
         paredit-backward-kill-word
         sp-backward-delete-char
         sp-backward-kill-word
@@ -32,6 +33,7 @@
         sp-splice-sexp
         sp-unwrap-sexp
         toggle-comment-on-line
+        wgrep-finish-edit
         whole-line-or-region-kill-region
         whole-line-or-region-kill-ring-save
         whole-line-or-region-yank
@@ -43,9 +45,12 @@
       '(
         ace-window
         counsel-M-x
+        dap-tooltip-mouse-motion
         hydra--digit-argument
+        ignore
         mouse-set-region
         org-cycle
         org-edit-src-save
+        wgrep-change-to-wgrep-mode
         yh/whole-line-or-region-kill-ring-save
         ))
