@@ -1,29 +1,8 @@
-find -name vterm-ctrl.c
-find -name "vterm-ctrl.c"
-tldr find
-find . -name "vterm-ctrl.c"
-ghic
-ghc
-ghci
-cd ..
-ll
-ll ..
-mv src/* .
-cd src/
-ll
-cd ..
-clear
-cd ..
-rm -rf ts-groceries/
-mkdir ts-groceries
-cd ts-groceries/
-e package.json
 rm package.json 
 yarn init
 yarn init -y
 e package.json 
 ┌─[15:10]──[/Users/yuanha/projects/javascript/ts-groceries]
-clear
 rm -r node_modules/
 rm -r yarn.lock 
 yarn
@@ -52,31 +31,22 @@ cd mr
 e master.go 
 cd ..
 cd main/
-ls
 cd /Users/yuanha/projects/golang/gobook/gopl.io/ch8/clock1/
-ls
 cd /Users/yuanha/projects/golang/gobook/gopl.io/
-ls
 cd ..
-ls
 go run gopl.io/ch8/clock1
 go run -a gopl.io/ch8/clock1
-ls
-clear
 golang -h
 go -h
 go run -h
 go help run 
-ls
 go build -a gopl.io/ch8/clock1
 ./clock1 
-ls
 go build -a gopl.io/ch8/clock1
 ./clock1 
 ll gopl.io/ch8/clock1
 cat gopl.io/ch8/clock1/clock.go 
 go build -a gopl.io/ch8/clock1
-ls
 rm clock1
 go build -a gopl.io/ch8/clock1
 rm clock1
@@ -84,22 +54,15 @@ go build -a gopl.io/ch8/clock1
 ./clock1 
 go build -a gopl.io/ch8/clock1
 ./clock1 
-ls
 cd ..
-ls
 cd gobook/
-ls
 rm -r gopl.io/
 go run -a gopl.io/ch8/clock1
 go run -a gopl.io/ch8/clock2
 go run -a gopl.io/ch8/reverb1
-ls
 go run -a gopl.io/ch8/crawl1
 go build -a gopl.io/ch8/crawl1
-ls
 ./crawl1 http://gopl.io/
-clear
-ls
 go run -a gopl.io/countdown
 go run -a gopl.io/countdown1
 go run -a gopl.io/ch8/ecountdown1
@@ -110,19 +73,35 @@ go run -a gopl.io/ch8/countdown2
 go run -a gopl.io/ch8/countdown3
 go run -a gopl.io/ch8/countdown3ls
 cd ~/Downloads/
-ls
 ls | grep pay2020
 ${ls | grep pay2020 }
-ls
 open .
 cd ../main/
-ls
 make run-worker
 cd ../main/
-ls
-ls
 cd ../main/
 cd ../main/
-make run-master 
 cd ../main
 make run-master 
+cd ~
+cd Library/
+cd ..
+cd Projects/
+git clone https://github.com/lysyi3m/macos-terminal-themes.git
+cd macos-terminal-themes/
+cd themes/
+ll Atom.terminal 
+open Atom.terminal 
+which ondemand 
+ondemand connect -t www
+ll
+ls
+zsh
+brew install
+ls
+ls
+ls
+clear
+ls
+ls
+pwd

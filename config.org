@@ -3,7 +3,7 @@
   (setq-default indicate-empty-lines t)
   (setq-default cursor-type 'box)
   (blink-cursor-mode 0)
-  (setq-default mac-option-modifier 'meta)
+  ;; (setq-default mac-option-modifier 'meta)
   (setq-default frame-title-format "%b (%f)")
   (setq shift-select-mode 1)
   (add-hook 'ibuffer-mode-hook (lambda () (ibuffer-auto-mode 1)))
@@ -72,12 +72,11 @@
   (global-set-key (kbd "C-x C-z") nil)
   (global-set-key (kbd "C-;") 'comment-indent)
   (global-set-key (kbd "C-c R") 'revert-buffer)
-  ;; (setq sh-basic-offset 4)
   (global-set-key (kbd "M-SPC") 'cycle-spacing)
   (setq-default indent-tabs-mode nil)
-  (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+  ;(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+  (set-keyboard-coding-system nil)
 #+END_SRC
-
 * ace-window
 #+begin_src emacs-lisp
   (use-package ace-window
@@ -399,7 +398,6 @@
 
     ;; (add-to-list 'company-backends 'company-yasnippet)
     (use-package company-box
-      ;; :demand
       :bind
       (:map company-active-map
             ("M-d" . 'company-box-doc-manually))
@@ -445,12 +443,13 @@
       ("C-c k" . 'crux-delete-buffer-and-file)
       ("C-<return>" . 'crux-smart-open-line)
       ("C-S-<return>" . 'crux-smart-open-line-above)
-      ("C-<backspace>" . 'crux-kill-line-backwards)     
+      ("C-<backspace>" . 'crux-kill-line-backwards)
       ;; ([(meta shift o)] . 'crux-smart-open-line-above)
       ("C-c d" . 'crux-duplicate-current-line-or-region)
       ("C-c D" . 'crux-duplicate-and-comment-current-line-or-region)
       ("C-c f" . 'crux-cleanup-buffer-or-region)
       ("C-c o" . crux-open-with))
+
     (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
   #+end_src
 
@@ -572,56 +571,56 @@
 
     (use-package all-the-icons :ensure t)
 
-    (use-package modus-vivendi-theme
-      :init
-      (setq modus-vivendi-theme-slanted-constructs t
-            modus-vivendi-theme-bold-constructs t
-            modus-vivendi-theme-fringes 'nil ; {nil,'subtle,'intense}
-            modus-vivendi-theme-3d-modeline nil
-            modus-vivendi-theme-faint-syntax nil
-            modus-vivendi-theme-intense-hl-line nil
-            modus-vivendi-theme-intense-paren-match nil
-            modus-vivendi-theme-prompts 'subtle ; {nil,'subtle,'intense}
-            modus-vivendi-theme-completions 'moderate ; {nil,'moderate,'opinionated}
-            modus-vivendi-theme-diffs 'desaturated ; {nil,'desaturated,'fg-only}
-            modus-vivendi-theme-org-blocks 'greyscale ; {nil,'greyscale,'rainbow}
-            modus-vivendi-theme-variable-pitch-headings t
-            modus-vivendi-theme-rainbow-headings t
-            modus-vivendi-theme-section-headings nil
-            modus-vivendi-theme-scale-headings nil
-            ;; modus-vivendi-theme-scale-1 1.05
-            ;; modus-vivendi-theme-scale-2 1.1
-            ;; modus-vivendi-theme-scale-3 1.15
-            ;; modus-vivendi-theme-scale-4 1.2
-            ;; modus-vivendi-theme-scale-5 1.3
+    ;; (use-package modus-vivendi-theme
+    ;;   :init
+    ;;   (setq modus-vivendi-theme-slanted-constructs t
+    ;;         modus-vivendi-theme-bold-constructs t
+    ;;         modus-vivendi-theme-fringes 'nil ; {nil,'subtle,'intense}
+    ;;         modus-vivendi-theme-3d-modeline nil
+    ;;         modus-vivendi-theme-faint-syntax nil
+    ;;         modus-vivendi-theme-intense-hl-line nil
+    ;;         modus-vivendi-theme-intense-paren-match nil
+    ;;         modus-vivendi-theme-prompts 'subtle ; {nil,'subtle,'intense}
+    ;;         modus-vivendi-theme-completions 'moderate ; {nil,'moderate,'opinionated}
+    ;;         modus-vivendi-theme-diffs 'desaturated ; {nil,'desaturated,'fg-only}
+    ;;         modus-vivendi-theme-org-blocks 'greyscale ; {nil,'greyscale,'rainbow}
+    ;;         modus-vivendi-theme-variable-pitch-headings t
+    ;;         modus-vivendi-theme-rainbow-headings t
+    ;;         modus-vivendi-theme-section-headings nil
+    ;;         modus-vivendi-theme-scale-headings nil
+    ;;         ;; modus-vivendi-theme-scale-1 1.05
+    ;;         ;; modus-vivendi-theme-scale-2 1.1
+    ;;         ;; modus-vivendi-theme-scale-3 1.15
+    ;;         ;; modus-vivendi-theme-scale-4 1.2
+    ;;         ;; modus-vivendi-theme-scale-5 1.3
 
-            )
-      )
+    ;;         )
+    ;;   )
 
-    (use-package modus-operandi-theme
-      :init
-      (setq modus-operandi-theme-slanted-constructs t
-            modus-operandi-theme-bold-constructs t
-            modus-operandi-theme-fringes 'nil ; {nil,'subtle,'intense}
-            modus-operandi-theme-3d-modeline nil
-            modus-operandi-theme-faint-syntax nil
-            modus-operandi-theme-intense-hl-line nil
-            modus-operandi-theme-intense-paren-match nil
-            modus-operandi-theme-prompts 'subtle ; {nil,'subtle,'intense}
-            modus-operandi-theme-completions 'moderate ; {nil,'moderate,'opinionated}
-            modus-operandi-theme-diffs 'desaturated ; {nil,'desaturated,'fg-only}
-            modus-operandi-theme-org-blocks 'greyscale ; {nil,'greyscale,'rainbow}
-            modus-operandi-theme-variable-pitch-headings t
-            modus-operandi-theme-rainbow-headings t
-            modus-operandi-theme-section-headings nil
-            modus-operandi-theme-scale-headings nil
-            ;; modus-operandi-theme-scale-1 1.05
-            ;; modus-operandi-theme-scale-2 1.1
-            ;; modus-operandi-theme-scale-3 1.15
-            ;; modus-operandi-theme-scale-4 1.2
-            ;; modus-operandi-theme-scale-5 1.3
+    ;; (use-package modus-operandi-theme
+    ;;   :init
+    ;;   (setq modus-operandi-theme-slanted-constructs t
+    ;;         modus-operandi-theme-bold-constructs t
+    ;;         modus-operandi-theme-fringes 'nil ; {nil,'subtle,'intense}
+    ;;         modus-operandi-theme-3d-modeline nil
+    ;;         modus-operandi-theme-faint-syntax nil
+    ;;         modus-operandi-theme-intense-hl-line nil
+    ;;         modus-operandi-theme-intense-paren-match nil
+    ;;         modus-operandi-theme-prompts 'subtle ; {nil,'subtle,'intense}
+    ;;         modus-operandi-theme-completions 'moderate ; {nil,'moderate,'opinionated}
+    ;;         modus-operandi-theme-diffs 'desaturated ; {nil,'desaturated,'fg-only}
+    ;;         modus-operandi-theme-org-blocks 'greyscale ; {nil,'greyscale,'rainbow}
+    ;;         modus-operandi-theme-variable-pitch-headings t
+    ;;         modus-operandi-theme-rainbow-headings t
+    ;;         modus-operandi-theme-section-headings nil
+    ;;         modus-operandi-theme-scale-headings nil
+    ;;         ;; modus-operandi-theme-scale-1 1.05
+    ;;         ;; modus-operandi-theme-scale-2 1.1
+    ;;         ;; modus-operandi-theme-scale-3 1.15
+    ;;         ;; modus-operandi-theme-scale-4 1.2
+    ;;         ;; modus-operandi-theme-scale-5 1.3
 
-            ))
+    ;;         ))
 
 
     (defun light-theme ()
@@ -734,9 +733,8 @@
 
 * exec-path-from-shell
 #+begin_src emacs-lisp
-  (use-package exec-path-from-shell
-    :config
-     (exec-path-from-shell-initialize))
+  (use-package exec-path-from-shell)
+  (exec-path-from-shell-initialize)
 #+end_src
 * expand region
   #+begin_src emacs-lisp
@@ -979,7 +977,6 @@
 
 #+end_src
 
-
 * highlight indentation / hl-line-mode
   #+begin_src emacs-lisp
     (use-package highlight-indent-guides
@@ -1063,16 +1060,19 @@
 
 * ispell
   #+BEGIN_SRC emacs-lisp
-    (cond
-     ((executable-find "hunspell")
-      (setq ispell-program-name "hunspell")
-      (setq ispell-local-dictionary "en_US")
-      (setq ispell-local-dictionary-alist
-            '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))))
+    ;; (cond
+    ;;  ((executable-find "hunspell")
+    ;;   (setq ispell-program-name "hunspell")
+    ;;   (setq ispell-local-dictionary "en_US")
+    ;;   (setq ispell-local-dictionary-alist
+    ;;         '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))))
 
-     ((executable-find "aspell")
-      (setq ispell-program-name "aspell")
-      (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
+    ;;  ((executable-find "aspell")
+    ;;   (setq ispell-program-name "aspell")
+    ;;   (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
+
+
+    (setq ispell-program-name "/usr/local/bin/ispell")
   #+END_SRC
 
 * ivy
@@ -1254,8 +1254,6 @@
       (setq display-line-numbers-widen t)
       (add-hook 'prog-mode-hook 'display-line-numbers-mode))
 
-
-
     (use-package nlinum)
     (add-hook 'prog-mode-hook 'nlinum-mode)
   #+END_SRC
@@ -1316,11 +1314,14 @@
 
 * Org
   #+BEGIN_SRC emacs-lisp
+    (setq org-image-actual-width nil)
     (setq org-directory "~/Dropbox/org")
-    (setq org-default-notes-file "~/Dropbox/org/note.org")
-    (setq org-agenda-files '("note.org" "paper.org" "learn.org" "journal.org"))
+    (setq org-default-notes-file (concat org-directory "/notes.org"))
+    (setq org-agenda-files
+            `(,(concat org-directory "/note.org")
+              ,(concat org-directory "/journal.org")))
+
     (setq org-refile-targets '((nil :maxlevel . 5) (org-agenda-files :maxlevel . 5)))
-    ;; (setq org-refile-targets '( :maxlevel . 10))
     (setq org-refile-use-outline-path 'file)
     (setq org-refile-use-cache nil)
     (setq org-outline-path-complete-in-steps nil)
@@ -1344,17 +1345,15 @@
       :mode (("\\.org$" . org-mode))
       :bind
       ("C-c a" . org-agenda)
-      ;; ("C-c l" . org-store-link)
       :custom
       (org-pretty-entities t)
       (org-src-window-setup 'current-window)
       (org-todo-keywords
        '((sequence
           "TODO(t)"
-          ;; "PROJECT(p)"
-          "SOMEDAY(s)"
           "WAITING(w)"
           "|"
+          "SOMEDAY(s)"
           "CANCELLED(c)"
           "DONE(d)")))
       (org-todo-keyword-faces
@@ -1362,41 +1361,23 @@
          ("CANCELLED" . "DarkCyan")
          ("SOMEDAY" . "wheat4")
          ("WAITING" . "sienna4")
-         ;; ("PROJECT" . "plum4")
-         ))
-      :config
-      (use-package ox-twbs
-        :ensure t))
+         )))
 
     (use-package org-bullets
-        :ensure t
         :commands (org-bullets-mode)
         :init
         (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-    ;; use org-bullets-mode for utf8 symbols as org bullets
-    (require 'org-bullets)
-    ;; make available "org-bullet-face" such that I can control the font size individually
-    (setq org-bullets-face-name (quote org-bullet-face))
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-    ;; (setq org-bullets-bullet-list '("*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*"))
+    ;; (setq org-bullets-face-name (quote org-bullet-face))
+    ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
     (use-package org-capture
       :ensure nil
       :bind ("C-c c" . org-capture)
       :config
       (setq org-capture-templates
-            '(("d" "Daliy Task" entry (file+datetree "journal.org")
-               "* daily tasks [0/3]\n  - [ ] \n  - [ ] \n  - [ ] ")
-              ("c" "Journal" entry (file+datetree "journal.org")
-               "* %?")
-              ;; ("o" "Org Capture" entry (file+headline "note.org" "Inbox")
-              ;;  "* TODO %?")
-              ;; ("a" "Annotation" entry (file+headline "note.org" "Inbox")
-              ;;  "* TODO %?\n  %a")
-              ;; ("p" "Paper" entry (file+headline "paper.org" "Inbox")
-              ;;  "* %?")
-              )))
+            '(("c" "Journal" entry (file+datetree "journal.org")
+               "* %?"))))
 
     ;; (defun org-edit (name)
     ;;   (interactive)
@@ -1430,6 +1411,31 @@
     ;;	 :publishing-function org-twbs-publish-to-html
     ;;	 :with-sub-superscript nil)))
   #+END_SRC
+
+
+* org-download
+#+begin_src emacs-lisp
+  (use-package org-download)
+
+  (add-hook 'dired-mode-hook 'org-download-enable)
+#+end_src
+
+* COMMENT org-roam
+#+begin_src emacs-lisp
+  (use-package org-roam
+        ;;:hook
+        ;;(after-init . org-roam-mode)
+        :custom
+        (org-roam-directory "~/Dorpbox/org/org-roam/")
+        :bind (:map org-roam-mode-map
+                (("C-c n l" . org-roam)
+                 ("C-c n f" . org-roam-find-file)
+                 ("C-c n g" . org-roam-show-graph))
+                :map org-mode-map
+                (("C-c n i" . org-roam-insert)))
+        :config
+        (add-hook 'after-init-hook 'org-roam-mode))
+#+end_src
 
 * Outline-minor-mode/hs-mode/origami
 #+begin_src emacs-lisp
@@ -1707,6 +1713,13 @@
     (global-set-key (kbd "C-c s") 'eshell)
     (global-set-key (kbd "C-c S") 'eshell-new)
 
+
+    (use-package eshell-syntax-highlighting
+      :after esh-mode
+      :demand t
+      :config
+      ;; Enable in all Eshell buffers.
+      (eshell-syntax-highlighting-global-mode +1)) ;
 #+END_SRC
 
 * single line kill/copy
@@ -1797,6 +1810,7 @@
   (use-package smartparens
     :hook
     (prog-mode . smartparens-mode)
+    (org-mode . smartparens-mode)
     (inferior-python-mode . smartparens-mode)
     (clojure-mode . smartparens-strict-mode)
     (cider-repl-mode . smartparens-strict-mode)
@@ -2184,5 +2198,7 @@
     ("C-c y" . 'youdao-dictionary-search-at-point)
     ("C-c Y" . 'youdao-dictionary-search))
 #+END_SRC
+
+
 
 
